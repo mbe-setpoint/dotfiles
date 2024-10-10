@@ -119,3 +119,6 @@ function y() {
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lg=lazygit
 alias cl=clear
+
+#Initialize zoxide
+eval "$(zoxide init zsh)"
