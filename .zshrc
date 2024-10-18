@@ -102,6 +102,8 @@ alias cds="cd ~/code/sandbox/"
 alias cdS="cd ~/code/setpoint/"
 alias cdc="cd ~/.config/nvim/"
 alias cdg="cd /Users/mbe/Library/CloudStorage/GoogleDrive-mbe@setpoint.no/Shared\ drives"
+alias cdv="cd ~/vault"
+alias o="cd ~/vault && nvim ."
 
 export PATH=/Users/mbe/.local/bin:/Users/mbe/code/setpoint/ClickUp/macGregorExport/bin:/Users/mbe/.nvm/versions/node/v18.16.1/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/usr/local/share/dotnet:~/.dotnet/tools:/usr/local/go/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/mbe/.nvm/versions/node/v18.16.1/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/mbe/.cargo/bin
 if command -v pyenv 1>/dev/null 2>&1; then

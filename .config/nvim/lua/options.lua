@@ -19,7 +19,7 @@ vim.opt.timeoutlen = 500 -- Sets the timeout for keybindings
 vim.opt.backup = false -- do not creates a backup file
 vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
--- vim.opt.conceallevel = 1                        -- 0 = so that `` is visible in markdown files
+vim.opt.conceallevel = 1                        -- 0 = so that `` is visible in markdown files
 vim.opt.hlsearch = true -- highlight all matches on previous search pattern
 vim.opt.ignorecase = true -- ignore case in search patterns
 vim.opt.mouse = "a" -- allow the mouse to be used in neovim
