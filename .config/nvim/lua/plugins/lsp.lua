@@ -87,8 +87,7 @@ return {
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				"lua_ls",
-				"rust_analyzer",
-				"tsserver",
+				"ts_ls",
 			},
 			handlers = {
 				-- The first entry (without a key) will be the default handler

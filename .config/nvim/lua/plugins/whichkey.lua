@@ -22,22 +22,16 @@ return {
 					g = true,
 				},
 			},
-			window = {
+			win = {
 				border = "rounded",
 				position = "bottom",
 				padding = { 2, 2, 2, 2 },
 			},
-			ignore_missing = false,
 			show_help = true,
 			show_keys = true,
 			disable = {
 				buftypes = {},
 				filetypes = { "TelescopePrompt" },
-			},
-			triggers_blacklist = {
-				-- list of mode / prefixes that should never be hooked by WhichKey
-				-- this is mostly relevant for keymaps that start with a native binding
-				n = { "d" },
 			},
 		})
 	end,

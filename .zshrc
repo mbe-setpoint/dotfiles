@@ -81,7 +81,9 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
 plugins+=(zsh-vi-mode tmux)
+
 ZSH_TMUX_AUTOSTART=false
+
 source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
@@ -138,11 +140,11 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-#export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 
 #Tmuxifier
-export PATH="$HOME/.config/tmux/plugins/tmuxifier/bin:$PATH"
-eval "$(tmuxifier init -)"
+# export PATH="$HOME/.config/tmux/plugins/tmuxifier/bin:$PATH"
+# eval "$(tmuxifier init -)"
 
 #Kitty
 export PATH="/Applications/kitty.app/Contents/MacOS/kitty:/Applications/kitty.app/Contents/MacOS:$PATH"
