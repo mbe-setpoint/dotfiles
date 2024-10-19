@@ -1,0 +1,17 @@
+alias cds="cd ~/code/sandbox"
+alias cdS="cd ~/code/setpoint"
+alias cdc="cd ~/.config"
+alias cdcn="cd ~/.config/nvim"
+
+alias nz="nvim ~/.zshrc"
+
+alias sz="source ~/.zshrc"
+alias cl="clear"
+
+alias ls='ls --color'
+alias la='ls -a'
+alias ll='ls -l'
+alias lla='ls -la'
+
+alias y="yazi"
+alias lg="lazygit"
