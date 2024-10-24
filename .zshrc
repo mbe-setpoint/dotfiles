@@ -64,3 +64,11 @@ eval "$(zoxide init --cmd cd zsh)"
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 fi
+
+# Add nvim from Bob to PATH
+export PATH="/Users/mbe/.local/share/bob/nvim-bin:$PATH"
+
+# Add nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

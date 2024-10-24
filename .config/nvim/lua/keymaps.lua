@@ -1,19 +1,20 @@
 local opts = { noremap = true, silent = true }
 local which_key = require("which-key")
 local which_key_keys = {
-	q = { "<cmd>confirm q<CR>", "Quit" },
-	h = { "<cmd>split<CR>", "H-Split" },
-	v = { "<cmd>vsplit<CR>", "V-Split" },
-	n = { "<cmd>Neotree toggle<CR>", "NeoTree" },
-	b = {
-		name = "Buffers",
-		d = { "<cmd>bd<CR>", "Delete" },
-		n = { "<cmd>bn<CR>", "Next" },
-		p = { "<cmd>bp<CR>", "Previous" },
-	},
-	l = { name = "LSP" },
-	s = { name = "Search/Replace" },
-	t = { "<cmd>TransparentToggle<CR>", "Transparent Toggle" },
+	{"<leader>q", "<cmd>confirm q<CR>", desc="Quit" },
+	{"<leader>h", "<cmd>split<CR>", desc="H-Split" },
+	{"<leader>v", "<cmd>vsplit<CR>", desc= "V-Split" },
+	{"<leader>n", "<cmd>Neotree toggle<CR>", desc="NeoTree" },
+	{"<leader>l", group = "LSP" },
+    {"<leader>f", group = "Find" },
+	{"<leader>s", group = "Search/Replace" },
+    {"<leader>a", group = "Harpoon" },
+    {"<leader>m", group = "Markdown" },
+    {"<leader>c", group = "Cellular" },
+    {"<leader>g", group = "Git" },
+    {"<leader>d", group = "Diagnostics" },
+    {"<leader>s", group = "Select" },
+	{"<leader>t", "<cmd>TransparentToggle<CR>", desc =  "Transparent Toggle" },
 }
 
 -- End of line navigation
@@ -98,7 +99,6 @@ vim.keymap.set("n", "<leader>o", "<cmd>lua require('oil').toggle_float()<cr>", {
 
 -- Telescope
 local builtin = require("telescope.builtin")
-table.insert(which_key_keys, { f = { name = "Find" } })
 -- Lists files in your current working directory, respects .gitignore
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find Files" })
 -- Search for a string in your current working directory and get results live as you type, respects .gitignore.
@@ -119,7 +119,6 @@ vim.keymap.set("n", "<leader>fn", '<cmd>let @+ = expand("%")<CR>', { desc = "Cop
 vim.keymap.set("n", "<leader>fp", '<cmd>let @+ = expand("%:p")<CR>', { desc = "Copy File Path" })
 
 -- Harpoon
--- table.insert(which_key_keys, {a = { name = "Harpoon", ["1"] = "which_key_ignore" }})
 vim.keymap.set("n", "<s-m>", ":lua require('harpoon.mark').add_file()<cr>", { desc = "Harpoon file", silent = true })
 vim.keymap.set(
 	"n",
@@ -159,7 +158,6 @@ vim.keymap.set(
 )
 
 -- Peek (Markdown preview)
-table.insert(which_key_keys, { m = { name = "Markdown" } })
 vim.keymap.set("n", "<leader>mp", function()
 	local peek = require("peek")
 	if peek.is_open() then
@@ -170,17 +168,14 @@ vim.keymap.set("n", "<leader>mp", function()
 end, { desc = "Peek (Markdown Preview)" })
 
 -- Cellular automaton
-table.insert(which_key_keys, { c = { name = "Cellular" } })
 vim.keymap.set("n", "<leader>cg", ":CellularAutomaton game_of_life<cr>", { desc = "Game of life" })
 vim.keymap.set("n", "<leader>cm", ":CellularAutomaton make_it_rain<cr>", { desc = "Make it rain", silent = true })
 vim.keymap.set("n", "<leader>cs", ":CellularAutomaton scramble<cr>", { desc = "Scramble", silent = true })
 
 --Lazygit
-table.insert(which_key_keys, { g = { name = "Git" } })
 vim.keymap.set("n", "<leader>gg", ":LazyGit<cr>", { desc = "LazyGit", silent = true })
 
 -- Trouble
-table.insert(which_key_keys, { d = { name = "Diagnostics" } })
 vim.keymap.set("n", "<leader>dd", function()
 	require("trouble").toggle()
 end, { desc = "Toggle Trouble", silent = true })
@@ -206,7 +201,6 @@ vim.keymap.set("n", "zK", function()
 end, { desc = "Peek Fold" })
 
 -- Treesitter text objects
--- table.insert(which_key_keys, { s = { name = "Select" } })
 
 -- LSP
 -- Use LspAttach autocommand to only map the following keys
@@ -256,7 +250,8 @@ vim.keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search(
 	desc = "Search on current file",
 })
 
-which_key.register(which_key_keys, { mode = "n", prefix = "<leader>" })
+which_key.add(which_key_keys, { mode = "n", prefix = "<leader>" })
+-- which_key.register(which_key_keys, { mode = "n", prefix = "<leader>" })
 
 -- Map <Esc> to exit terminal-mode: >vim
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal-mode" })
