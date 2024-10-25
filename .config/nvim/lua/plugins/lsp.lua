@@ -130,19 +130,22 @@ return {
 
 		-- Setup Conform to be used for formatting
 		require("conform").setup({
+			formatters = {
+				black = { prepend_args = { "--fast" } },
+			},
 			-- Sets formatter for each filetype
 			formatters_by_ft = {
 				lua = { "stylua" },
 				-- Conform will run multiple formatters sequentially
 				python = { "isort", "black" },
 				-- Use a sub-list to run only the first available formatter
-				javascript = { { "prettierd", "prettier" } },
+				javascript = { "prettierd", "prettier" },
 				astro = { "prettierd", "prettier" },
 				json = { "prettier" },
 			},
 			format_on_save = {
 				-- These options will be passed to conform.format()
-				timeout_ms = 500,
+				timeout_ms = 5000,
 				lsp_fallback = true,
 			},
 		})
