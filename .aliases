@@ -15,3 +15,4 @@ alias lla='ls -la'
 
 alias y="yazi"
 alias lg="lazygit"
+alias cat="bat -pp"
