@@ -38,11 +38,10 @@ return {
 				["<cr>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 			}),
 			sources = cmp.config.sources({
-				{ name = "nvim_lsp", group_index = 2 },
-				{ name = "luasnip", group_index = 2 },
-				-- { name = "copilot",  group_index = 2 },
-			}, {
+				{ name = "nvim_lsp" },
+				{ name = "luasnip" },
 				{ name = "buffer" },
+				{ name = "path" },
 			}),
 		})
 
@@ -70,9 +69,9 @@ return {
 			cmp_lsp.default_capabilities()
 		)
 
-		require("cmp").config.formatting = {
-			format = require("tailwindcss-colorizer-cmp").formatter,
-		}
+		-- require("cmp").config.formatting = {
+		-- 	format = require("tailwindcss-colorizer-cmp").formatter,
+		-- }
 
 		-- Set up Mason (Used to download and install lsp servers
 		-- Linters, daps and formatters
@@ -88,9 +87,10 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"ts_ls",
+				"tailwindcss",
 			},
 			handlers = {
-				-- The first entry (without a key) will be the default handler
+				-- The first entry (with:out a key) will be the default handler
 				-- and will be called for each installed server that doesn't have
 				-- a dedicated handler.
 				function(server_name) -- default handler (optional)
@@ -118,6 +118,9 @@ return {
 				end,
 				["elixirls"] = function()
 					require("lspconfig").elixirls.setup({})
+				end,
+				["tailwindcss"] = function()
+					require("lspconfig").tailwindcss.setup({})
 				end,
 			},
 		})

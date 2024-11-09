@@ -1,20 +1,20 @@
 local opts = { noremap = true, silent = true }
 local which_key = require("which-key")
 local which_key_keys = {
-	{"<leader>q", "<cmd>confirm q<CR>", desc="Quit" },
-	{"<leader>h", "<cmd>split<CR>", desc="H-Split" },
-	{"<leader>v", "<cmd>vsplit<CR>", desc= "V-Split" },
-	{"<leader>n", "<cmd>Neotree toggle<CR>", desc="NeoTree" },
-	{"<leader>l", group = "LSP" },
-    {"<leader>f", group = "Find" },
-	{"<leader>s", group = "Search/Replace" },
-    {"<leader>a", group = "Harpoon" },
-    {"<leader>m", group = "Markdown" },
-    {"<leader>c", group = "Cellular" },
-    {"<leader>g", group = "Git" },
-    {"<leader>d", group = "Diagnostics" },
-    {"<leader>s", group = "Select" },
-	{"<leader>t", "<cmd>TransparentToggle<CR>", desc =  "Transparent Toggle" },
+	{ "<leader>q", "<cmd>confirm q<CR>", desc = "Quit" },
+	{ "<leader>h", "<cmd>split<CR>", desc = "H-Split" },
+	{ "<leader>v", "<cmd>vsplit<CR>", desc = "V-Split" },
+	{ "<leader>n", "<cmd>Neotree toggle<CR>", desc = "NeoTree" },
+	{ "<leader>l", group = "LSP" },
+	{ "<leader>f", group = "Find" },
+	{ "<leader>s", group = "Search/Replace" },
+	{ "<leader>a", group = "Harpoon" },
+	{ "<leader>m", group = "Markdown" },
+	{ "<leader>c", group = "Cellular" },
+	{ "<leader>g", group = "Git" },
+	{ "<leader>d", group = "Diagnostics" },
+	{ "<leader>s", group = "Select" },
+	{ "<leader>t", "<cmd>TransparentToggle<CR>", desc = "Transparent Toggle" },
 }
 
 -- End of line navigation
@@ -28,13 +28,17 @@ vim.keymap.set("n", "<Space>", "", opts)
 
 -- Why?
 -- vim.keymap.set("n", "<C-i>", "<C-i>", opts)
---
+
+-- Buffer switchin
+vim.keymap.set("n", "<C-h>", "<cmd>bp<cr>", opts)
+vim.keymap.set("n", "<C-l>", "<cmd>bn<cr>", opts)
+
 ---- Better window navigation
-vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
-vim.keymap.set("n", "<C-j>", "<C-w>j", opts)
-vim.keymap.set("n", "<C-k>", "<C-w>k", opts)
-vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
-vim.keymap.set("n", "<C-tab>", "<c-6>", opts)
+-- vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
+-- vim.keymap.set("n", "<C-j>", "<C-w>j", opts)
+-- vim.keymap.set("n", "<C-k>", "<C-w>k", opts)
+-- vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
+-- vim.keymap.set("n", "<C-tab>", "<c-6>", opts)
 
 -- Center screen
 vim.keymap.set("n", "n", "nzz", opts)

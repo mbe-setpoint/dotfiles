@@ -21,6 +21,10 @@ return {
 					"astro",
 					"tsx",
 					"html",
+					"elixir",
+					"heex",
+					"eex",
+					"svelte",
 				},
 				auto_install = true,
 				highlight = {
