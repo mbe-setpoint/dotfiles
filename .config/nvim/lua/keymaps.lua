@@ -33,6 +33,9 @@ vim.keymap.set("n", "<Space>", "", opts)
 vim.keymap.set("n", "<C-h>", "<cmd>bp<cr>", opts)
 vim.keymap.set("n", "<C-l>", "<cmd>bn<cr>", opts)
 
+-- Join lines
+vim.keymap.set("n", "gJ", "<cmd>join<cr>", opts)
+
 ---- Better window navigation
 -- vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
 -- vim.keymap.set("n", "<C-j>", "<C-w>j", opts)
@@ -87,8 +90,8 @@ vim.keymap.set(
 )
 
 -- Saving
-vim.keymap.set("n", "<c-s>", "<cmd>w<cr>", opts)
-vim.keymap.set("i", "<c-s>", "<cmd>w<cr><esc>", opts)
+vim.keymap.set("n", "<c-s>", "<cmd>wa<cr>", opts)
+vim.keymap.set("i", "<c-s>", "<cmd>wa<cr><esc>", opts)
 
 -- Clear search highlighta
 vim.keymap.set(
