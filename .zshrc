@@ -68,6 +68,9 @@ fi
 # Add nvim from Bob to PATH
 export PATH="/Users/mbe/.local/share/bob/nvim-bin:$PATH"
 
+# Support for ImageMagick
+export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
+
 # Add nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
