@@ -71,6 +71,9 @@ export PATH="/Users/mbe/.local/share/bob/nvim-bin:$PATH"
 # Support for ImageMagick
 export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
 
+# API key for Open AI in nvim
+[ -f ~/.avanterc ] && source ~/.avanterc
+
 # Add nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
