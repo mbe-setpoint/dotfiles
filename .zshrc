@@ -71,6 +71,9 @@ export PATH="/Users/mbe/.local/share/bob/nvim-bin:$PATH"
 # Support for ImageMagick
 export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
 
+# Set default editor to nvim
+export EDITOR=nvim
+
 # API key for Open AI in nvim
 [ -f ~/.avanterc ] && source ~/.avanterc
 
