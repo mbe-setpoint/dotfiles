@@ -124,6 +124,7 @@ return {
 				end,
 			},
 		})
+		require("lspconfig").gleam.setup({})
 
 		require("colorizer").setup({
 			user_default_options = { tailwind = true },
