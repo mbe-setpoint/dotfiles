@@ -12,10 +12,6 @@ vim.keymap.set("n", "<Space>", "", opts)
 -- Why?
 -- vim.keymap.set("n", "<C-i>", "<C-i>", opts)
 
--- Buffer switchin
-vim.keymap.set("n", "<C-h>", "<cmd>bp<cr>", opts)
-vim.keymap.set("n", "<C-l>", "<cmd>bn<cr>", opts)
-
 -- Join lines
 vim.keymap.set("n", "gJ", "<cmd>join<cr>", opts)
 
@@ -44,12 +40,6 @@ vim.keymap.set("x", "p", [["_dP]]) -- Keep last yank in default register after p
 vim.keymap.set("x", "y", "ygv<Esc>") -- Move cursor to last line of the yanked text instead of to the beginning
 vim.keymap.set("x", "Y", "y$") -- Yank to end of line
 
--- Mouse mappings
-vim.cmd([[:amenu 10.100 mousemenu.Goto\ Definition <cmd>lua vim.lsp.buf.definition()<CR>]])
-vim.cmd([[:amenu 10.110 mousemenu.References <cmd>lua vim.lsp.buf.references()<CR>]])
-vim.keymap.set("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
-vim.keymap.set("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
-
 -- Move lines up and down
 vim.api.nvim_set_keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
 vim.api.nvim_set_keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
@@ -65,55 +55,6 @@ vim.keymap.set(
 	"<cmd>nohlsearch<cr>",
 	{ noremap = true, silent = true, desc = "Clear search highlights" }
 )
-
---Copy current buffer file name or file path
-vim.keymap.set("n", "<leader>fn", '<cmd>let @+ = expand("%")<CR>', { desc = "Copy File Name" })
-vim.keymap.set("n", "<leader>fp", '<cmd>let @+ = expand("%:p")<CR>', { desc = "Copy File Path" })
-
--- Harpoon
-vim.keymap.set("n", "<s-m>", ":lua require('harpoon.mark').add_file()<cr>", { desc = "Harpoon file", silent = true })
-vim.keymap.set(
-	"n",
-	"<Tab>",
-	":lua require('harpoon.ui').toggle_quick_menu()<cr>",
-	{ desc = "Show Harpooned files", silent = true }
-)
-vim.keymap.set(
-	"n",
-	"<leader>1",
-	":lua require('harpoon.ui').nav_file(1)<cr>",
-	{ desc = "which_key_ignore", silent = true }
-)
-vim.keymap.set(
-	"n",
-	"<leader>2",
-	":lua require('harpoon.ui').nav_file(2)<cr>",
-	{ desc = "which_key_ignore", silent = true }
-)
-vim.keymap.set(
-	"n",
-	"<leader>3",
-	":lua require('harpoon.ui').nav_file(3)<cr>",
-	{ desc = "which_key_ignore", silent = true }
-)
-vim.keymap.set(
-	"n",
-	"<leader>4",
-	":lua require('harpoon.ui').nav_file(4)<cr>",
-	{ desc = "which_key_ignore", silent = true }
-)
-vim.keymap.set(
-	"n",
-	"<leader>5",
-	":lua require('harpoon.ui').nav_file(5)<cr>",
-	{ desc = "which_key_ignore", silent = true }
-)
-
---Lazygit
-vim.keymap.set("n", "<leader>gg", ":LazyGit<cr>", { desc = "LazyGit", silent = true })
-
--- Map <Esc> to exit terminal-mode: >vim
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal-mode" })
 
 -- call vscode commands from neovim
 local keymap = vim.keymap.set
@@ -136,7 +77,7 @@ keymap({ "n", "v" }, "<leader>v", "<cmd>lua require('vscode').action('workbench.
 keymap({ "n", "v" }, "<leader>ff", "<cmd>lua require('vscode').action('workbench.action.quickOpen')<CR>")
 keymap({ "n", "v" }, "<leader>z", "<cmd>lua require('vscode').action('workbench.action.toggleZenMode')<CR>")
 -- harpoon keymaps
-keymap({ "n", "v" }, "M", "<cmd>lua require('vscode').action('vscode-harpoon.addEditor')<CR>")
+keymap({ "n", "v" }, "<leader>ha", "<cmd>lua require('vscode').action('vscode-harpoon.addEditor')<CR>")
 keymap({ "n", "v" }, "<leader><tab>", "<cmd>lua require('vscode').action('vscode-harpoon.editorQuickPick')<CR>")
 keymap({ "n", "v" }, "<leader>he", "<cmd>lua require('vscode').action('vscode-harpoon.editEditors')<CR>")
 keymap({ "n", "v" }, "<leader>1", "<cmd>lua require('vscode').action('vscode-harpoon.gotoEditor1')<CR>")

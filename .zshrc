@@ -2,9 +2,6 @@
 [[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Set paths
-#export PATH=/usr/local/opt/python/libexec/bin:$PATH
-
 # Install package manager zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -17,6 +14,9 @@ source ~/.aliases
 
 # Set keybindings to emacs
 bindkey -e
+# Set keybindings to vim
+#bindkey -v
+
 bindkey '^p' history-serach-backward
 bindkey '^n' history-serach-forward
 
@@ -35,6 +35,8 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
 
 # Add Oh My Zsh snippets (since we are not using oh my zsh)
 zinit snippet OMZP::git
@@ -74,6 +76,9 @@ export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
 # Set default editor to nvim
 export EDITOR=nvim
 
+# Set term-type
+export TERM=xterm-256color
+
 # API key for Open AI in nvim
 [ -f ~/.avanterc ] && source ~/.avanterc
 
@@ -82,7 +87,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+#asdf
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
 
 # CodeWhisperer post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
+
+
+
+

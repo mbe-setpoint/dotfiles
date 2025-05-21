@@ -8,12 +8,13 @@ alias nz="nvim ~/.zshrc"
 alias sz="source ~/.zshrc"
 alias cl="clear"
 
-alias ls='ls --color'
-alias la='ls -a'
-alias ll='ls -l'
-alias lla='ls -la'
+alias ls='eza --color'
+alias la='eza -a'
+alias ll='eza -l'
+alias lla='eza -la'
 
 alias y="yazi"
 alias lg="lazygit"
+alias ld="lazydocker"
 alias cat="bat -pp"
 alias tt="tt -n 30"
