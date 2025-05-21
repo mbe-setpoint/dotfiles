@@ -46,6 +46,10 @@ brew install zoxide
 ```zsh
 brew install eza
 ```
+### bat (Clone of cat(1) with syntax highlighting and Git integration)
+```zsh
+brew install bat
+```
 ### fzf (Command-line fuzzy finder written in Go)
 ```zsh
 brew install fzf
