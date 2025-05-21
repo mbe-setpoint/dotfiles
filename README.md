@@ -92,7 +92,7 @@ brew install yarn
 - Raycast (export / import settings. Stored in dotfiles)
 
 ## Window Manager
-- Included in task switcher (Raycast)
+- Included in task switcher (Raycast - settings need to be imported / exported - current settings are in .config-dir)
 - AltTab - better switching between open apps (no settings sync)
 - Ice - for task bar enhancement (no settings sync)
 
