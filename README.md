@@ -42,6 +42,10 @@ brew install stow
 ```zsh
 brew install zoxide
 ```
+### eza (Modern, maintained replacement for ls)
+```zsh
+brew install eza
+```
 ### fzf (Command-line fuzzy finder written in Go)
 ```zsh
 brew install fzf
