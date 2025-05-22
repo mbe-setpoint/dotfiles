@@ -59,6 +59,9 @@ brew install fzf
 ### tmux (Terminal multiplexer)
 ```zsh
 brew install tmux
+```
+Then do:
+```zsh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 	- settings in dotfiles
