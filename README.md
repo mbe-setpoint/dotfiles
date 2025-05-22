@@ -33,6 +33,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 	See: https://github.com/abiosoft/colima
 ```zsh
 brew install docker docker-compose lazydocker colima
+brew services start colima
 ```
 ### stow (Manage dotfiles)
 ```zsh
