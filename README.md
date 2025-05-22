@@ -65,8 +65,11 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ### asdf (Manage elixir/erlang)
 ```zsh
 brew install asdf
-asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir.git && asdf install elixir latest
-asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git && asdf install erlang latest
+asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir.git
+asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+asdf plugin add gleam https://github.com/asdf-community/asdf-gleam.git
+asdf list all [elixir | erlang | gleam]
+asdf install [elixir | erlang | gleam] [version] 
 ```
 ### bob (Version manager for neovim)
 ```zsh
