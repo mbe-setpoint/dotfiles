@@ -33,6 +33,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 	See: https://github.com/abiosoft/colima
 ```zsh
 brew install docker docker-compose lazydocker colima
+brew services start colima
 ```
 ### stow (Manage dotfiles)
 ```zsh
@@ -57,6 +58,7 @@ brew install fzf
 ### tmux (Terminal multiplexer)
 ```zsh
 brew install tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 	- settings in dotfiles
 ### asdf (Manage elixir/erlang)
@@ -82,8 +84,10 @@ brew install uv
 ### nvm - node versions
 ```zsh
 brew install nvm
-nvm install latest
-nvm use latest
+(Update .zshrc as instructed by homebrew)
+nvm ls-remote
+nvm install [version]
+nvm use [version]
 brew install yarn
 ```
 ### Div plugins for zsh (see .zshrc)
