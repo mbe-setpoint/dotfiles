@@ -2,7 +2,6 @@ alias cds="cd ~/code/sandbox"
 alias cdS="cd ~/code/setpoint"
 alias cdc="cd ~/.config"
 alias cdcn="cd ~/.config/nvim"
-alias cdv="cd ~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes-mbe"
 alias nz="nvim ~/.zshrc"
 
 alias sz="source ~/.zshrc"
