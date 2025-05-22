@@ -1,0 +1,69 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-s": "workspace::Save"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "space w": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      // Put key bindings here if you want them to work in normal & visual mode.
+      "shift-k": "editor::MoveLineUp",
+      "shift-j": "editor::MoveLineDown"
+    }
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "shift-y": ["workspace::SendKeystrokes", "y $"], // Use neovim's yank behavior: yank to end of line.
+      "shift-k": "editor::Hover",
+      "space l a": "editor::ToggleCodeActions",
+      "space l f": "editor::Format",
+      "space l r": "editor::Rename",
+      "space l d": "diagnostics::Deploy",
+      "space o": "outline::Toggle",
+      "space v": "pane::SplitRight",
+      "space h": "pane::SplitDown",
+      "space f b": "tab_switcher::Toggle",
+      "space n": "workspace::ToggleLeftDock",
+      "space r": "workspace::ToggleRightDock",
+      "space t": "workspace::ToggleBottomDock",
+      "g r": "editor::FindAllReferences",
+      "shift-l": "vim::EndOfLine",
+      "shift-h": "vim::StartOfLine",
+      "'pace": null // Makes shift not move cursor in normal mod.e
+    }
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "j j": "vim::NormalBefore", // In insert mode, make jj escape to normal mode.
+      "ctrl-s": ["workspace::SendKeystrokes", "escape ctrl-s"]
+    }
+  },
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      // Put key bindings here (in addition to the context above) if you want them to
+      // work when no editor exists.
+      // "space f": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-w h": "workspace::ActivatePaneLeft",
+      "ctrl-w l": "workspace::ActivatePaneRight",
+      "ctrl-w k": "workspace::ActivatePaneUp",
+      "ctrl-w j": "workspace::ActivatePaneDown"
+      // ... or other keybindings
+    }
+  }
+]
