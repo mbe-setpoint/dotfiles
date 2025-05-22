@@ -115,6 +115,9 @@ brew install npm
 ## Window Manager
 - Included in task switcher (Raycast - settings need to be imported / exported - current settings are in .config-dir)
 - AltTab - better switching between open apps (no settings sync)
+  ```zsh
+  brew install --cask alt-tab
+  ```
 - Ice - for task bar enhancement (no settings sync)
 
 ## Notes
