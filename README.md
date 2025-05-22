@@ -64,7 +64,8 @@ Then do:
 ```zsh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
-	- settings in dotfiles
+- settings in dotfiles
+
 ### asdf (Manage elixir/erlang)
 ```zsh
 brew install asdf
