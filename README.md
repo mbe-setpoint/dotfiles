@@ -34,6 +34,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```zsh
 brew install docker docker-compose lazydocker colima
 brew services start colima
+colima start
 ```
 ### stow (Manage dotfiles)
 ```zsh
@@ -58,14 +59,21 @@ brew install fzf
 ### tmux (Terminal multiplexer)
 ```zsh
 brew install tmux
+```
+Then do:
+```zsh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
-	- settings in dotfiles
+- settings in dotfiles
+
 ### asdf (Manage elixir/erlang)
 ```zsh
 brew install asdf
-asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir.git && asdf install elixir latest
-asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git && asdf install erlang latest
+asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir.git
+asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+asdf plugin add gleam https://github.com/asdf-community/asdf-gleam.git
+asdf list all [elixir | erlang | gleam]
+asdf install [elixir | erlang | gleam] [version] 
 ```
 ### bob (Version manager for neovim)
 ```zsh
@@ -81,7 +89,7 @@ brew install yazi
 ```zsh
 brew install uv
 ```
-### nvm - node versions
+### Node
 ```zsh
 brew install nvm
 (Update .zshrc as instructed by homebrew)
@@ -89,6 +97,7 @@ nvm ls-remote
 nvm install [version]
 nvm use [version]
 brew install yarn
+brew install npm
 ```
 ### Div plugins for zsh (see .zshrc)
 ### Amazon's CodeWhisperer (https://aws.amazon.com/blogs/devops/introducing-amazon-codewhisperer-for-command-line/) 
@@ -106,6 +115,9 @@ brew install yarn
 ## Window Manager
 - Included in task switcher (Raycast - settings need to be imported / exported - current settings are in .config-dir)
 - AltTab - better switching between open apps (no settings sync)
+  ```zsh
+  brew install --cask alt-tab
+  ```
 - Ice - for task bar enhancement (no settings sync)
 
 ## Notes
