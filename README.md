@@ -85,7 +85,7 @@ brew install yazi
 ```zsh
 brew install uv
 ```
-### nvm - node versions
+### Node
 ```zsh
 brew install nvm
 (Update .zshrc as instructed by homebrew)
@@ -93,6 +93,7 @@ nvm ls-remote
 nvm install [version]
 nvm use [version]
 brew install yarn
+brew install npm
 ```
 ### Div plugins for zsh (see .zshrc)
 ### Amazon's CodeWhisperer (https://aws.amazon.com/blogs/devops/introducing-amazon-codewhisperer-for-command-line/) 
