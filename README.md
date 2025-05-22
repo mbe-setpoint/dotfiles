@@ -82,8 +82,10 @@ brew install uv
 ### nvm - node versions
 ```zsh
 brew install nvm
-nvm install latest
-nvm use latest
+(Update .zshrc as instructed by homebrew)
+nvm ls-remote
+nvm install [version]
+nvm use [version]
 brew install yarn
 ```
 ### Div plugins for zsh (see .zshrc)
