@@ -60,6 +60,14 @@ brew install fzf
 ```zsh
 brew install deno
 ```
+### duf (Disk Usage/Free Utility - a better 'df' alternative)
+```zsh
+brew install duf
+```
+### ncdu (NCurses Disk Usage)
+```zsh
+brew install ncdu
+```
 ### tmux (Terminal multiplexer)
 ```zsh
 brew install tmux
