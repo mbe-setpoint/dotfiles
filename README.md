@@ -147,8 +147,10 @@ brew install npm
 ## Text editor
 - Nvim
 - Zed
-- VSCode
-
+### VSCode
+```zsh
+brew install --cask visual-studio-code
+```
 ## Office 365
 - because we have to….
 
