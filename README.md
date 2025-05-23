@@ -56,6 +56,10 @@ brew install bat
 ```zsh
 brew install fzf
 ```
+### deno (Secure runtime for JavaScript and TypeScript)
+```zsh
+brew install deno
+```
 ### tmux (Terminal multiplexer)
 ```zsh
 brew install tmux
