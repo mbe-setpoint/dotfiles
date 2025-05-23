@@ -99,9 +99,6 @@ nvm use [version]
 brew install yarn
 brew install npm
 ```
-### Div plugins for zsh (see .zshrc)
-### Amazon's CodeWhisperer (https://aws.amazon.com/blogs/devops/introducing-amazon-codewhisperer-for-command-line/) 
-
 
 ## Mail
 - Superhuman (paid)
