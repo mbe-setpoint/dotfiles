@@ -156,6 +156,7 @@ brew install npm
 ## Text editor
 - Nvim
 - Zed
+  - Theme from: https://github.com/ethangilmore/zed-kanagawa
 ### VSCode
 ```zsh
 brew install --cask visual-studio-code
