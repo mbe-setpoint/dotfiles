@@ -68,6 +68,10 @@ brew install duf
 ```zsh
 brew install ncdu
 ```
+### TLDR - Official tldr client written in Rust
+```zsh
+brew install tlrc
+```
 ### tmux (Terminal multiplexer)
 ```zsh
 brew install tmux
