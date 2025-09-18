@@ -82,10 +82,16 @@
       "[ {": ["vim::UnmatchedBackward", { "char": "{" }],
       "] )": ["vim::UnmatchedForward", { "char": ")" }],
       "[ (": ["vim::UnmatchedBackward", { "char": "(" }],
-      "f": ["vim::PushFindForward", { "before": false }],
-      "t": ["vim::PushFindForward", { "before": true }],
-      "shift-f": ["vim::PushFindBackward", { "after": false }],
-      "shift-t": ["vim::PushFindBackward", { "after": true }],
+      "f": ["vim::PushFindForward", { "before": false, "multiline": true }],
+      "t": ["vim::PushFindForward", { "before": true, "multiline": true }],
+      "shift-f": [
+        "vim::PushFindBackward",
+        { "after": false, "multiline": true }
+      ],
+      "shift-t": [
+        "vim::PushFindBackward",
+        { "after": true, "multiline": true }
+      ],
       "m": "vim::PushMark",
       "'": ["vim::PushJump", { "line": true }],
       "`": ["vim::PushJump", { "line": false }],
@@ -268,7 +274,7 @@
       "] c": "editor::GoToHunk",
       "[ c": "editor::GoToPreviousHunk",
       "g c": "vim::PushToggleComments",
-      "ctrl-s": ["workspace::SendKeystrokes", "cmd-s escape"]
+      "ctrl-s": "workspace::SaveAll"
     }
   },
   {
@@ -619,8 +625,7 @@
     "context": "vim_operator == y",
     "bindings": {
       "y": "vim::CurrentLine",
-      "v": "vim::PushForcedMotion",
-      "s": ["vim::PushAddSurrounds", {}]
+      "v": "vim::PushForcedMotion"
     }
   },
   {
@@ -783,7 +788,8 @@
       "ctrl-w c": "pane::CloseActiveItem",
       "ctrl-w ctrl-q": "pane::CloseActiveItem",
       "ctrl-w ctrl-a": "pane::CloseActiveItem",
-      "ctrl-w q": "pane::CloseAllItems",
+      // "ctrl-w q": "pane::CloseAllItems",
+      "ctrl-w q": ["pane::CloseActiveItem", { "save_intent": "save_all" }],
       "ctrl-w a": "pane::CloseAllItems",
       "ctrl-w ctrl-o": "workspace::CloseInactiveTabsAndPanes",
       "ctrl-w o": "workspace::CloseInactiveTabsAndPanes",
@@ -819,7 +825,6 @@
       "v": "project_panel::OpenPermanent",
       "p": "project_panel::Open",
       "x": "project_panel::RevealInFileManager",
-      "s": "project_panel::OpenWithSystem",
       "] c": "project_panel::SelectNextGitEntry",
       "[ c": "project_panel::SelectPrevGitEntry",
       "] d": "project_panel::SelectNextDiagnostic",

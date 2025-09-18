@@ -10,16 +10,15 @@
   "agent": {
     "always_allow_tool_actions": true,
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4.1"
+      "provider": "openai",
+      "model": "gpt-5"
     },
-    "version": "2"
   },
   "icon_theme": "Catppuccin Mocha",
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "theme": "Kanagawa Wave - No Italics",
+  "theme": "Kanagawa Wave",
   "telemetry": {
     "diagnostics": false,
     "metrics": false
@@ -28,15 +27,15 @@
   "vim": {
     "enable_vim_sneak": true
   },
-  "ui_font_size": 16,
-  "buffer_font_size": 16.0,
+  "ui_font_size": 14,
+  "buffer_font_size": 14.0,
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "buffer_line_height": {
     "custom": 1.5
   },
   "terminal": {
     "font_family": "JetBrainsMono Nerd Font",
-    "font_size": 16,
+    "font_size": 14,
     "line_height": {
       "custom": 1.5
     }
@@ -62,6 +61,9 @@
     "enabled": true
   },
   "languages": {
+    "Swift": {
+      "language_servers": ["sourcekit-lsp", "package-swift-lsp"]
+    },
     "HTML": {
       "language_servers": [
         "tailwindcss-language-server",
@@ -138,8 +140,5 @@
   },
   "chat_panel": {
     "dock": "left"
-  },
-  "experimental.theme_overrides": {
-    "editor.document_highlight.read_background": "#6C7086"
   }
 }

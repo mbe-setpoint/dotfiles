@@ -1,6 +1,5 @@
 fastfetch
-# CodeWhisperer pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
+
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # oh-my-zsh
@@ -94,10 +93,22 @@ export NVM_DIR="$HOME/.nvm"
 #asdf
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
+vv() {
+  # Assumes all configs exist in directories named ~/.config/nvim-*
+  local config=$(fd --max-depth 1 --glob 'nvim-*' ~/.config | fzf --prompt="Neovim Configs > " --height=~50% --layout=reverse --border --exit-0)
+ 
+  # If I exit fzf without selecting a config, don't open Neovim
+  [[ -z $config ]] && echo "No config selected" && return
+ 
+  # Open Neovim with the selected config
+  NVIM_APPNAME=$(basename $config) nvim $@
+}
 
-# CodeWhisperer post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
+# export ANTHROPIC_API_KEY='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'
 
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/mbe/.lmstudio/bin"
+# End of LM Studio CLI section
 
-
-
+eval "$(/Users/mbe/.local/bin/mise activate zsh)"
+alias python="python3"
