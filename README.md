@@ -56,6 +56,22 @@ brew install bat
 ```zsh
 brew install fzf
 ```
+### deno (Secure runtime for JavaScript and TypeScript)
+```zsh
+brew install deno
+```
+### duf (Disk Usage/Free Utility - a better 'df' alternative)
+```zsh
+brew install duf
+```
+### ncdu (NCurses Disk Usage)
+```zsh
+brew install ncdu
+```
+### TLDR - Official tldr client written in Rust
+```zsh
+brew install tlrc
+```
 ### tmux (Terminal multiplexer)
 ```zsh
 brew install tmux
@@ -99,9 +115,6 @@ nvm use [version]
 brew install yarn
 brew install npm
 ```
-### Div plugins for zsh (see .zshrc)
-### Amazon's CodeWhisperer (https://aws.amazon.com/blogs/devops/introducing-amazon-codewhisperer-for-command-line/) 
-
 
 ## Mail
 - Superhuman (paid)
@@ -147,8 +160,11 @@ brew install npm
 ## Text editor
 - Nvim
 - Zed
-- VSCode
-
+  - Theme from: https://github.com/ethangilmore/zed-kanagawa
+### VSCode
+```zsh
+brew install --cask visual-studio-code
+```
 ## Office 365
 - because we have to….
 
